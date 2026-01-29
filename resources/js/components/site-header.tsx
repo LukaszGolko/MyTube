@@ -1,5 +1,5 @@
 "use client"
-import { SidebarIcon } from "lucide-react"
+import { Menu } from "lucide-react"
 import { SearchForm } from "@/components/search-form"
 import {
   Breadcrumb,
@@ -12,6 +12,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { useSidebar } from "@/components/ui/sidebar"
+import { NavUser } from "./nav-user"
 export function SiteHeader() {
   const { toggleSidebar } = useSidebar()
   return (
@@ -23,10 +24,10 @@ export function SiteHeader() {
           size="icon"
           onClick={toggleSidebar}
         >
-          <SidebarIcon />
+          <Menu  />
         </Button>
-        <Separator orientation="vertical" className="mr-2 h-4" />
-        <Breadcrumb className="hidden sm:block">
+        {/* <Separator orientation="vertical" className="mr-2 h-4" /> */}
+        {/* <Breadcrumb className="hidden sm:block">
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink href="#">
@@ -38,8 +39,12 @@ export function SiteHeader() {
               <BreadcrumbPage>Data Fetching</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
-        </Breadcrumb>
-        <SearchForm className="w-full sm:ml-auto sm:w-auto" />
+        </Breadcrumb> */}
+        MyTube
+        <SearchForm className="mx-auto w-full sm:ml-auto sm:w-auto" />
+        <div className="w-12">
+        <NavUser />
+        </div>
       </div>
     </header>
   )
