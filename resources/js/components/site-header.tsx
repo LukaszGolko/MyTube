@@ -1,6 +1,8 @@
 "use client"
 import { Menu } from "lucide-react"
 import { SearchForm } from "@/components/search-form"
+import { Link } from '@inertiajs/react';
+
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -40,7 +42,7 @@ export function SiteHeader() {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb> */}
-        MyTube
+        <Link href="/main">MyTube</Link>
         <SearchForm className="mx-auto w-full sm:ml-auto sm:w-auto" />
         <div className="w-12">
         <NavUser />

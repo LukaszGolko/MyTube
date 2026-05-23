@@ -12,17 +12,13 @@ import { Form, Head } from '@inertiajs/react';
 import { ShieldBan, ShieldCheck } from 'lucide-react';
 import { useState } from 'react';
 
+import AppStickyHeader from '@/layouts/app/app-sticky-header';
+
 interface TwoFactorProps {
     requiresConfirmation?: boolean;
     twoFactorEnabled?: boolean;
 }
 
-const breadcrumbs: BreadcrumbItem[] = [
-    {
-        title: 'Two-Factor Authentication',
-        href: show.url(),
-    },
-];
 
 export default function TwoFactor({
     requiresConfirmation = false,
@@ -41,7 +37,7 @@ export default function TwoFactor({
     const [showSetupModal, setShowSetupModal] = useState<boolean>(false);
 
     return (
-        <AppLayout breadcrumbs={breadcrumbs}>
+        <AppStickyHeader>
             <Head title="Two-Factor Authentication" />
             <SettingsLayout>
                 <div className="space-y-6">
@@ -132,6 +128,6 @@ export default function TwoFactor({
                     />
                 </div>
             </SettingsLayout>
-        </AppLayout>
+        </AppStickyHeader>
     );
 }
