@@ -2,6 +2,8 @@
 "use client"
 
 import * as React from "react"
+
+
 import {
   BookOpen,
   Bot,
@@ -19,6 +21,9 @@ import { NavMain } from "@/components/nav-main"
 import { NavProjects } from "@/components/nav-projects"
 import { NavSecondary } from "@/components/nav-secondary"
 import { NavUser } from "@/components/nav-user"
+import { UserInfo } from '@/components/user-info';
+import { usePage } from '@inertiajs/react';
+import { type SharedData } from '@/types';
 import {
   Sidebar,
   SidebarContent,
@@ -154,27 +159,35 @@ const data = {
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+
+  const { auth } = usePage<SharedData>().props;
+  
+
   return (
     <Sidebar
       className="top-(--header-height) h-[calc(100svh-var(--header-height))]!"
       {...props}
     >
       <SidebarHeader>
-        {/* <SidebarMenu>
+        <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
-              <a href="#">
+              {/* <a href="#">
                 <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
                   <Command className="size-4" />
                 </div>
                 <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-medium">Acme Inc</span>
-                  <span className="truncate text-xs">Enterprise</span>
+                  <p className="truncate font-medium">Twój kanał</p>
+                  <p className="truncate text-xs"><UserInfo user={auth.user} /></p>
                 </div>
+              </a> */}
+              <a href={route('dashboard')}>
+                  Home
+
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>
-        </SidebarMenu> */}
+        </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />

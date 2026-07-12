@@ -4,6 +4,18 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Laravel\Fortify\Features;
 
+use App\Http\Controllers\Studio\StudioPanelController;
+
+
+
+Route::domain(config('app.studio_domain'))
+    ->middleware(['auth', 'verified'])
+    ->group(function () {
+        Route::get('/panel', [StudioPanelController::class, 'panel'])->name('studio.panel');
+    });
+
+
+
 Route::get('/', function () {
     return Inertia::render('welcome', [
         'canRegister' => Features::enabled(Features::registration()),
@@ -18,6 +30,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 Route::get('/main', function () {
     return Inertia::render('main');
-    })->name('main');
+})->name('main');
 
-require __DIR__.'/settings.php';
+require __DIR__ . '/settings.php';

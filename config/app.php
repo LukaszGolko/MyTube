@@ -123,4 +123,5 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'studio_domain' => env('STUDIO_DOMAIN', 'studio.mytube.test'),
 ];
