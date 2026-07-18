@@ -1,4 +1,4 @@
-import { AppSidebar } from "@/components/app-sidebar"
+import { StudioAppSidebar } from "@/components/studio-components/studio-app-sidebar"
 import { SiteHeader } from "@/components/site-header"
 import {
   SidebarInset,
@@ -26,7 +26,7 @@ export default function StudioPanel({ latestVideo }: StudioPanelProps) {
       <SidebarProvider className="flex flex-col">
         <SiteHeader />
         <div className="flex flex-1">
-          <AppSidebar collapsible="icon"/>
+          <StudioAppSidebar collapsible="icon"/>
           <SidebarInset>
             <div className="flex flex-1 flex-col gap-4 p-4">
               <div className="grid auto-rows-min gap-4 md:grid-cols-3">

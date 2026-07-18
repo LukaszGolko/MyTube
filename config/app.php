@@ -124,4 +124,5 @@ return [
     ],
 
     'studio_domain' => env('STUDIO_DOMAIN', 'studio.mytube.test'),
+    'home_domain' => env('HOME_DOMAIN', 'mytube.test'),
 ];

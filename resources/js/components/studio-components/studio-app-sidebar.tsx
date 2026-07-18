@@ -21,7 +21,7 @@ import { NavMain } from "@/components/nav-main"
 import { NavProjects } from "@/components/nav-projects"
 import { NavSecondary } from "@/components/nav-secondary"
 import { NavUser } from "@/components/nav-user"
-import { UserInfo } from '@/components/user-info';
+import { StudioUserInfo } from '@/components/studio-components/studio-user-info';
 import { usePage } from '@inertiajs/react';
 import { type SharedData } from '@/types';
 import {
@@ -158,7 +158,7 @@ const data = {
   ],
 }
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+export function StudioAppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
   const { auth } = usePage<SharedData>().props;
   
@@ -169,25 +169,16 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       {...props}
     >
       <SidebarHeader>
-        <SidebarMenu>
+        <StudioUserInfo user={auth.user} />
+
+
+        {/* <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
-              {/* <a href="#">
-                <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
-                  <Command className="size-4" />
-                </div>
-                <div className="grid flex-1 text-left text-sm leading-tight">
-                  <p className="truncate font-medium">Twój kanał</p>
-                  <p className="truncate text-xs"><UserInfo user={auth.user} /></p>
-                </div>
-              </a> */}
-              <a href={route('dashboard')}>
-                  Home
-
-              </a>
+             
             </SidebarMenuButton>
           </SidebarMenuItem>
-        </SidebarMenu>
+        </SidebarMenu> */}
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
