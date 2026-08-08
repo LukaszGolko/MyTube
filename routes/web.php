@@ -12,7 +12,7 @@ Route::domain(config('app.studio_domain'))
     ->middleware(['auth', 'verified'])
     ->name('studio.')
     ->group(function () {
-        Route::get('/panel', [StudioPanelController::class, 'panel'])->name('studio.panel');
+        Route::get('/panel', [StudioPanelController::class, 'panel'])->name('panel');
     });
 
 Route::domain(config('app.home_domain'))

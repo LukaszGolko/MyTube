@@ -22,6 +22,9 @@ import { NavProjects } from "@/components/nav-projects"
 import { NavSecondary } from "@/components/nav-secondary"
 import { NavUser } from "@/components/nav-user"
 import { UserInfo } from '@/components/user-info';
+
+import { dashboard } from '@/routes/home'
+
 import { usePage } from '@inertiajs/react';
 import { type SharedData } from '@/types';
 import {
@@ -181,7 +184,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   <p className="truncate text-xs"><UserInfo user={auth.user} /></p>
                 </div>
               </a> */}
-              <a href={route('dashboard')}>
+              <a href={dashboard().url}>
                   Home
 
               </a>

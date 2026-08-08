@@ -5,6 +5,14 @@ import * as React from "react"
 
 
 import {
+  LayoutDashboard,
+  TvMinimalPlay,
+  ChartNoAxesCombined,
+  Users,
+  Blinds,
+  Copyright,
+  DollarSign,
+  WandSparkles,
   BookOpen,
   Bot,
   Command,
@@ -17,7 +25,7 @@ import {
   SquareTerminal,
 } from "lucide-react"
 
-import { NavMain } from "@/components/nav-main"
+import { StudioNavMain } from "@/components/studio-components/studio-nav-main"
 import { NavProjects } from "@/components/nav-projects"
 import { NavSecondary } from "@/components/nav-secondary"
 import { NavUser } from "@/components/nav-user"
@@ -42,90 +50,132 @@ const data = {
   },
   navMain: [
     {
-      title: "Playground",
+      title: "Panel",
       url: "#",
-      icon: SquareTerminal,
-      isActive: true,
-      items: [
-        {
-          title: "History",
-          url: "#",
-        },
-        {
-          title: "Starred",
-          url: "#",
-        },
-        {
-          title: "Settings",
-          url: "#",
-        },
-      ],
+      icon: LayoutDashboard
     },
     {
-      title: "Models",
+      title: "Treści",
       url: "#",
-      icon: Bot,
-      items: [
-        {
-          title: "Genesis",
-          url: "#",
-        },
-        {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
-          url: "#",
-        },
-      ],
+      icon: TvMinimalPlay
     },
     {
-      title: "Documentation",
+      title: "Statystyki",
       url: "#",
-      icon: BookOpen,
-      items: [
-        {
-          title: "Introduction",
-          url: "#",
-        },
-        {
-          title: "Get Started",
-          url: "#",
-        },
-        {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
-          url: "#",
-        },
-      ],
+      icon: ChartNoAxesCombined
     },
     {
-      title: "Settings",
+      title: "Społeczność",
       url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
-      ],
+      icon: Users
     },
+    {
+      title: "Napisy",
+      url: "#",
+      icon: Blinds,
+    },
+    {
+      title: "Wykrywanie Treści",
+      url: "#",
+      icon: Copyright,
+    },
+    {
+      title: "Zarabianie",
+      url: "#",
+      icon: DollarSign,
+    },
+    {
+      title: "Dostosowywanie",
+      url: "#",
+      icon: WandSparkles,
+    },
+
+     
+    // {
+    //   title: "Playground",
+    //   url: "#",
+    //   icon: SquareTerminal,
+    //   isActive: true,
+    //   items: [
+    //     {
+    //       title: "History",
+    //       url: "#",
+    //     },
+    //     {
+    //       title: "Starred",
+    //       url: "#",
+    //     },
+    //     {
+    //       title: "Settings",
+    //       url: "#",
+    //     },
+    //   ],
+    // },
+    // {
+    //   title: "Models",
+    //   url: "#",
+    //   icon: Bot,
+    //   items: [
+    //     {
+    //       title: "Genesis",
+    //       url: "#",
+    //     },
+    //     {
+    //       title: "Explorer",
+    //       url: "#",
+    //     },
+    //     {
+    //       title: "Quantum",
+    //       url: "#",
+    //     },
+    //   ],
+    // },
+    // {
+    //   title: "Documentation",
+    //   url: "#",
+    //   icon: BookOpen,
+    //   items: [
+    //     {
+    //       title: "Introduction",
+    //       url: "#",
+    //     },
+    //     {
+    //       title: "Get Started",
+    //       url: "#",
+    //     },
+    //     {
+    //       title: "Tutorials",
+    //       url: "#",
+    //     },
+    //     {
+    //       title: "Changelog",
+    //       url: "#",
+    //     },
+    //   ],
+    // },
+    // {
+    //   title: "Settings",
+    //   url: "#",
+    //   icon: Settings2,
+    //   items: [
+    //     {
+    //       title: "General",
+    //       url: "#",
+    //     },
+    //     {
+    //       title: "Team",
+    //       url: "#",
+    //     },
+    //     {
+    //       title: "Billing",
+    //       url: "#",
+    //     },
+    //     {
+    //       title: "Limits",
+    //       url: "#",
+    //     },
+    //   ],
+    // },
   ],
   navSecondary: [
     {
@@ -139,23 +189,23 @@ const data = {
       icon: Send,
     },
   ],
-  projects: [
-    {
-      name: "Design Engineering",
-      url: "#",
-      icon: Frame,
-    },
-    {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: Map,
-    },
-  ],
+//   projects: [
+//     {
+//       name: "Design Engineering",
+//       url: "#",
+//       icon: Frame,
+//     },
+//     {
+//       name: "Sales & Marketing",
+//       url: "#",
+//       icon: PieChart,
+//     },
+//     {
+//       name: "Travel",
+//       url: "#",
+//       icon: Map,
+//     },
+//   ],
 }
 
 export function StudioAppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -170,23 +220,14 @@ export function StudioAppSidebar({ ...props }: React.ComponentProps<typeof Sideb
     >
       <SidebarHeader>
         <StudioUserInfo user={auth.user} />
-
-
-        {/* <SidebarMenu>
-          <SidebarMenuItem>
-            <SidebarMenuButton size="lg" asChild>
-             
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarMenu> */}
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
+        <StudioNavMain items={data.navMain} />
+        {/* <NavProjects projects={data.projects} /> */}
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser />
+        {/* <NavUser /> */}
       </SidebarFooter>
     </Sidebar>
   )

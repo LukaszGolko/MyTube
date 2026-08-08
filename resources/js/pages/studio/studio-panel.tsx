@@ -1,5 +1,5 @@
 import { StudioAppSidebar } from "@/components/studio-components/studio-app-sidebar"
-import { SiteHeader } from "@/components/site-header"
+import { StudioSiteHeader } from "@/components/studio-components/studio-site-header"
 import {
   SidebarInset,
   SidebarProvider,
@@ -24,7 +24,7 @@ export default function StudioPanel({ latestVideo }: StudioPanelProps) {
     return(
       <div className="[--header-height:calc(--spacing(14))]">
       <SidebarProvider className="flex flex-col">
-        <SiteHeader />
+        <StudioSiteHeader />
         <div className="flex flex-1">
           <StudioAppSidebar collapsible="icon"/>
           <SidebarInset>
