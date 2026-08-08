@@ -13,6 +13,9 @@ import {
   Copyright,
   DollarSign,
   WandSparkles,
+  FileMusic,
+  Settings,
+  MessageSquareWarning,
   BookOpen,
   Bot,
   Command,
@@ -88,6 +91,11 @@ const data = {
       title: "Dostosowywanie",
       url: "#",
       icon: WandSparkles,
+    },
+    {
+      title: "Biblioteka audio",
+      url: "#",
+      icon: FileMusic,
     },
 
      
@@ -179,14 +187,14 @@ const data = {
   ],
   navSecondary: [
     {
-      title: "Support",
+      title: "Ustawienia",
       url: "#",
-      icon: LifeBuoy,
+      icon: Settings,
     },
     {
-      title: "Feedback",
+      title: "Prześlij opinię",
       url: "#",
-      icon: Send,
+      icon: MessageSquareWarning,
     },
   ],
 //   projects: [
@@ -226,9 +234,9 @@ export function StudioAppSidebar({ ...props }: React.ComponentProps<typeof Sideb
         {/* <NavProjects projects={data.projects} /> */}
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
-      <SidebarFooter>
-        {/* <NavUser /> */}
-      </SidebarFooter>
+      {/* <SidebarFooter>
+        <NavUser />
+      </SidebarFooter> */}
     </Sidebar>
   )
 }
