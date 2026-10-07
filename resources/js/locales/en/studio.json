@@ -1,0 +1,19 @@
+{
+    "panel": {
+        "latest_short_score": "Result of the latest Short film",
+
+        "day_one": "{{count}} day",
+        "day_other": "{{count}} days",
+
+        "hour_one": "{{count}} hour",
+        "hour_other": "{{count}} hours",
+
+        "since_published": "{{days}} {{hours}} since published",
+
+        "views": "Views",
+
+        "apv_per_video": "Average percentage viewed",
+
+        "likes": "Likes"
+    }
+}

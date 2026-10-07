@@ -1,0 +1,23 @@
+{
+    "panel": {
+        "latest_short_score": "Wynik najnowszego filmu Short",
+
+        "day_one": "{{count}} dzień",
+        "day_few": "{{count}} dni",
+        "day_many": "{{count}} dni",
+        "day_other": "{{count}} dnia",
+
+        "hour_one": "{{count}} godzina",
+        "hour_few": "{{count}} godziny",
+        "hour_many": "{{count}} godzin",
+        "hour_other": "{{count}} godziny",
+
+        "since_published": "{{days}} {{hours}} od opublikowania",
+
+        "views": "Wyświetlenia",
+
+        "apv_per_video": "Średni procent obejrzenia",
+
+        "likes": "Polubienia"
+    }
+}

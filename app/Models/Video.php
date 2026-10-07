@@ -66,6 +66,11 @@ class Video extends Model
         return $this->hasMany(VideoThumbnail::class);
     }
 
+    public function thumbnail()
+    {
+        return $this->hasOne(VideoThumbnail::class)->oldestOfMany();
+    }
+
     public function videoProcessingRuns(): HasMany
     {
         return $this->hasMany(VideoProcessingRun::class);
