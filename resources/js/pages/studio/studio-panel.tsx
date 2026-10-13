@@ -1,16 +1,23 @@
 
 import StudioLayout from "@/layouts/studio-layout/studio-layout"
 import { AspectRatio } from "@/components/ui/aspect-ratio"
+
 import { ChartColumnDecreasing } from 'lucide-react';
 import { MessageSquareText } from 'lucide-react';
 import { ThumbsUp } from 'lucide-react';
+import { Sparkle } from 'lucide-react';
+import { ChevronUp } from 'lucide-react';
+import { SquareKanban } from 'lucide-react';
+
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { useState } from 'react';
-import { ChevronUp } from 'lucide-react';
+
+import { Button } from "@/components/ui/button"
+
 
 import { useMemo } from 'react';
 
@@ -85,7 +92,7 @@ export default function StudioPanel({ latestVideo }: StudioPanelProps) {
                 />
                 </CollapsibleTrigger>
               </div>
-              <CollapsibleContent>
+              <CollapsibleContent className="overflow-hidden data-[state=open]:animate-collapsible-down data-[state=closed]:animate-collapsible-up">
                 <p className="text-muted-foreground my-4">{timeSincePublished ?? 'There is no video'}</p>
                 <div className="flex flex-col gap-2">
                   <p className="flex justify-between">
@@ -105,6 +112,11 @@ export default function StudioPanel({ latestVideo }: StudioPanelProps) {
                 </div>
               </CollapsibleContent>
             </Collapsible>
+            <div className="flex flex-row gap-4 mt-4">
+              <Button variant="secondary" className="rounded-full"><Sparkle />{t('panel.summarize')}</Button>
+              <Button variant="secondary" className="rounded-full"><SquareKanban className="rotate-180 !h-full !w-full"/></Button>
+              <Button variant="secondary" className="rounded-full"><MessageSquareText className="!h-full !w-full"/></Button>
+            </div>
           </div>
           <div className="rounded-lg border p-4">Item 2</div>
         </div>

@@ -14,6 +14,8 @@
 
         "apv_per_video": "Average percentage viewed",
 
-        "likes": "Likes"
+        "likes": "Likes",
+
+        "summarize": "Summarize the outcome of this video"
     }
 }
